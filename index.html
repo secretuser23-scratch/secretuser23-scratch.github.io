@@ -1,15 +1,31 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>/Games</title>
-        <meta name="description" content="Secretuser23's games page">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <p>Play <a href="minecraft.html">Minecraft</a> (1.5.2)</p>
-        <p>Coming soon: MVCTD Vs. Bloons!</p>
-        <p>Watch the <a href="Rainbow%20Circle%20Drawer.html">Rainbow Circle Drawer</a> in action!</p>
-        <a href="https://now.gg" target="_blank">Backup now.gg</a>
-    </body>
+
+<title> Nintendo DS Emulator - Powered by desmond</title>
+  <body>
+    <desmond-player id="player"></desmond-player>
+    <script src="desmond.min.js"></script>
+    <script>
+    document.getElementById("player").loadURL("path-to-game.nds");
+    </script>
+  </body>
+</html>
+
+<desmond-player></desmond-player>
+ <input type="file" style="position: absolute; transform: translate(-50%, -50%); left: 50%; top: 95%; color: white;"></input>
+ <script src="desmond.min.js"></script>
+ <script>
+ document.querySelector("input").onchange = function() {
+ document.querySelector("desmond-player").loadURL(URL.createObjectURL(document.querySelector("input").files[0]))
+ }
+ 
+ window.onload = function() {
+ setTimeout(function() {
+ document.querySelector("desmond-player").loadURL("./path-to-game.nds")
+ document.querySelector("desmond-player").shadowRoot.querySelector("#top").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 30%;height: 40%;";
+ 
+ document.querySelector("desmond-player").shadowRoot.querySelector("#bottom").style = "position: fixed;transform: translate(-50%, -50%);width: 40%;left: 50%;top: 70%;height: 40%;";
+ }, 1000)
+ }
+ </script>
+</body>
 </html>
